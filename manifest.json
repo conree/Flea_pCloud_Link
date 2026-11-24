@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "si.pcloud-link",
+  "name": "pCloud Share Link",
+  "version": "0.1.0",
+  "author": "conree",
+  "license": "MIT",
+  "description": "Copy a public pCloud share link for files and folders in ~/pCloudDrive, made through rclone's pCloud remote.",
+  "kinds": ["menu-action"],
+  "menuActions": [
+    {
+      "id": "link",
+      "label": "Copy pCloud Link",
+      "glyph": "clipboard",
+      "when": {"minItems": 1, "maxItems": 20, "folders": true}
+    }
+  ],
+  "access": ["selection", "network", "exec:rclone", "exec:wl-copy"],
+  "entryPoints": {"run": "bin/run"}
+}
